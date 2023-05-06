@@ -1,0 +1,71 @@
+<div>
+  {{#with web}}
+    <em>{{> title data="Programming languages:"}}</em>
+    {{#each languages}}
+      <div><b>Name:</b>{{name}}</div>
+      <div><b>Version:</b>{{version}}</div>
+      <div><b>Description:</b>{{description}}</div>
+
+      <br />
+
+      <ul>
+        {{#each elements}}
+          <div><b>Name:</b>{{name}}</div>
+          <div><b>Description:</b>{{description}}</div>
+
+          <ul>
+            {{#each attributes}}
+              <li>
+                <div><b>Name:</b>{{name}}</div>
+                <div><b>Description:</b>{{description}}</div>
+              </li>
+            {{/each}}
+          </ul>
+          
+          <br />
+        {{/each}}
+      </ul>
+
+      <ul>
+        {{#each properties}}
+          <div><b>Name:</b>{{name}}</div>
+          <div><b>Description:</b>{{description}}</div>
+
+          <ul>
+            {{#each values}}
+              <li>
+                <div><b>Color:</b>{{value}}</div>
+                <div><b>Description:</b>{{description}}</div>
+              </li>
+            {{/each}}
+          </ul>          
+          
+          <br />
+        {{/each}}        
+      </ul>
+
+      <ul>
+        {{#each functions}}
+          <div><b>Name:</b>{{name}}</div>
+          <div><b>Description:</b>{{description}}</div>
+
+          <ul>
+            {{#each parameters}}
+              <li>
+                <div><b>Name:</b>{{name}}</div>
+                <div><b>Type:</b>{{type}}</div>
+                <div><b>Description:</b>{{description}}</div>
+              </li>
+            {{/each}}
+          </ul>          
+          
+          <br />
+        {{/each}}
+      </ul>
+
+      <br />
+      <br />
+
+    {{/each}}
+  {{/with}}
+</div>
