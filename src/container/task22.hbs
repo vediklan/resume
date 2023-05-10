@@ -1,0 +1,194 @@
+<main>
+  <div class='text-center'><h1
+    >{{page_header.title}}</h1></div>
+
+  <div class='text-center text-uppercase'>
+    {{page_header.description}}
+  </div>
+
+  <br />
+
+  {{! секция about_us ====== }}
+  {{#with section}}
+    <div class='card'>
+      <div class='card-body'>
+        <div class='display-6 text-end'>
+          {{about_us.title_list.main}}
+        </div>
+
+        <br />
+
+        <div class='text-end'>
+          <h2>
+            {{about_us.title_list.sub}}
+          </h2>
+        </div>
+
+        <br />
+
+        <button class='btn btn-info'>
+          {{about_us.button.text}}
+        </button>
+
+      </div>
+    </div>
+
+    <br />
+
+    {{! Секция advantage - большая секция 1================= }}
+    <div class='card'>
+      <div class='card-body'>
+
+        <div class='display-5 text-muted'>
+          {{advantage.title}}
+        </div>
+
+        <br />
+
+        {{! внутренняя секция  efficiency ====== }}
+        <div class='card'>
+          <div class='card-body'>
+            {{#with advantage.efficiency}}
+              <div>
+                <div class='display-4 text-muted'>
+                  {{title}}
+                </div>
+
+                <br />
+
+                <div><h6>{{sub_title}}</h6></div>
+
+                <br />
+
+                <p>{{description}}</p>
+
+                <br />
+
+                <div>
+                  <button class='btn btn-warning'>{{button}}
+                  </button>
+                </div>
+              </div>
+            {{/with}}
+          </div>
+        </div>
+
+        <br />
+        {{! внутренняя секция  innovation ====== }}
+        <div class='card'>
+          <div class='card-body'>
+            {{#with advantage.innovation}}
+              <div>
+                <div
+                  class='display-4 text-muted text-center'
+                >
+                  {{title}}
+                </div>
+
+                <br />
+
+                <div class='text-center'><h6
+                  >{{sub_title}}</h6></div>
+
+                <br />
+
+                <p class='text-center'>{{description}}</p>
+
+                <br />
+
+                <div>
+                  <button class='btn btn-warning'>{{button}}
+                  </button>
+                </div>
+              </div>
+            {{/with}}
+          </div>
+        </div>
+
+        <br />
+
+        {{! внутренняя секция  collaboration ====== }}
+        <div class='card'>
+          <div class='card-body'>
+            {{#with advantage.collaboration}}
+              <div>
+                <div class='display-4 text-muted text-end'>
+                  {{title}}
+                </div>
+
+                <br />
+
+                <div class='text-end'><h6
+                  >{{sub_title}}</h6></div>
+
+                <br />
+
+                <p class='text-end'>{{description}}</p>
+
+                <br />
+
+                <div>
+                  <button class='btn btn-warning'>{{button}}
+                  </button>
+                </div>
+              </div>
+            {{/with}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br />
+
+    {{! Секция agreement - большая секция 2================= }}
+    <div class='card'>
+      <div class='card-body'>
+
+        {{#with agreement}}
+          <div>
+            <div class='display-5'>
+              {{title}}
+            </div>
+
+            <br />
+
+            {{! секция с секцией с кнопкой ====== }}
+            <div class='card'>
+              <div class='card-body'>
+                <div>
+                  <h5>
+                    {{info.sub_title}}
+                  </h5>
+                </div>
+
+                <br />
+
+                {{! секция с кнопкой ====== }}
+                <div class='card'>
+                  <div class='card-body'>
+
+                    <br />
+
+                    <p>
+                      {{info.detail.text}}
+                    </p>
+
+                    <div>
+                      <button
+                        class='btn btn-success'
+                      >{{info.detail.button}}
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        {{/with}}
+
+      </div>
+    </div>
+
+  {{/with}}
+
+</main>
