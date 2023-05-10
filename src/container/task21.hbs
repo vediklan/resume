@@ -1,0 +1,190 @@
+<main>
+
+  {{! heading - a big section 1================= }}
+  <div class='card'>
+    <div class='card-body'>
+
+      {{! section main ====== }}
+      <div class='card'>
+        <div class='card-body'>
+          {{#with heading}}
+            {{#with main}}
+              <div>
+                <div><h1>{{title}}</h1></div>
+                <p>{{text}}</p>
+                {{#with button_text}}
+                  <div>
+                    <button
+                      class='btn btn-primary'
+                    >{{solid}}
+                    </button>
+                  </div>
+
+                  <br />
+
+                  <div>
+                    <button
+                      class='btn btn-outline-primary'
+                    >{{outline}}
+                    </button>
+                  </div>
+                {{/with}}
+              </div>
+            {{/with}}
+          {{/with}}
+        </div>
+      </div>
+
+      <br />
+      {{! section second ====== }}
+      <div class='card'>
+        <div class='card-body'>
+          {{#with heading}}
+            {{#with second}}
+              <div>
+                <div><h2>{{title}}</h2></div>
+                <p>{{text}}</p>
+                {{#with button_text}}
+                  <div>
+                    <button
+                      class='btn btn-secondary'
+                    >{{solid}}
+                    </button>
+                  </div>
+
+                  <br />
+
+                  <div>
+                    <button
+                      class='btn btn-outline-secondary'
+                    >{{outline}}
+                    </button>
+                  </div>
+                {{/with}}
+              </div>
+            {{/with}}
+          {{/with}}
+        </div>
+      </div>
+
+      <br />
+
+      {{! section subblock ====== }}
+      <div class='card'>
+        <div class='card-body'>
+          {{#with heading}}
+            {{#with subblock}}
+              <div>
+                <div><h1>{{title}}</h1></div>
+                <p>{{text}}</p>
+                {{#with button_text}}
+                  <div>
+                    <button class='btn btn-dark'>{{solid}}
+                    </button>
+                  </div>
+
+                  <br />
+
+                  <div>
+                    <button
+                      class='btn btn-outline-dark'
+                    >{{outline}}
+                    </button>
+                  </div>
+                {{/with}}
+              </div>
+            {{/with}}
+          {{/with}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br />
+
+  {{! nested_display - large section 2================= }}
+  <div class='card'>
+    <div class='card-body'>
+
+      {{#with nested_display}}
+        <div class='display-1'>{{title}}</div>
+
+        <br />
+
+        {{! inner section ====== }}
+        <div class='card'>
+          <div class='card-body'>
+            {{#with children_display}}
+              <div>
+                <div class='display-4'>{{title}}</div>
+                <p>{{text}}</p>
+                {{#with button}}
+                  <div>
+                    <button
+                      class='btn btn-outline-warning'
+                    >{{text}}
+                    </button>
+                  </div>
+                {{/with}}
+              </div>
+            {{/with}}
+          </div>
+        </div>
+
+        <br />
+        {{! bottom of large section 2====== }}
+        <div><h6>{{header_text}}</h6></div>
+
+        <button class='btn btn-info'>
+          {{button.text}}
+        </button>
+
+      {{/with}}
+    </div>
+  </div>
+
+  <br />
+
+  {{! paragraph - large section 3================= }}
+  <div class='card'>
+    <div class='card-body'>
+
+      {{#with paragraph}}
+        <p class='text-uppercase'>{{title}}</p>
+
+        <br />
+
+        <p class='text-lowercase'>{{text}}</p>
+
+        <br />
+
+        <a
+          href='{{button.url}}'
+          class='btn btn-link'
+          target='_blank'
+        >{{text}}</a>
+
+        <br />
+
+        {{! inner section ====== }}
+        <div class='card'>
+          <div class='card-body'>
+            {{#each list_name}}
+              <li>
+                <a
+                  href='{{url}}'
+                  class='btn btn-link'
+                  target='_blank'
+                >
+                  {{text}}
+                </a>
+              </li>
+            {{/each}}
+          </div>
+        </div>
+
+      {{/with}}
+    </div>
+  </div>
+
+</main>
