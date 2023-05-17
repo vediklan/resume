@@ -1,0 +1,14 @@
+<div>
+    <div class="card">
+        <div class="nav py-2">
+            {{#with navigation}}
+            {{#each links}}
+            <div class="nav-item">
+                <a href="{{href}}" target="_blank"
+                    class="nav-link {{#if href}}enabled{{else}}disabled{{/if}}">{{text}}</a>
+            </div>
+            {{/each}}
+            {{/with}}
+        </div>
+    </div>
+</div>
