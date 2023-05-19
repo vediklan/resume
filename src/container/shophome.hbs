@@ -68,34 +68,32 @@
                 {{/each}}
             </div>
             {{/with}}
-
         </div>
-        {{!--
-    </section> --}}
 
-    {{!-- ==================================== --}}
-    <div class='row col-12 mt-4'>
-        {{#with goodsBlock}}
-        {{#each cards}}
-        <div class='col-4 g-3'>
-            <div class='card'>
 
-                <img class='card-img-top' src='{{image}}' />
+        {{!-- ==================================== --}}
+        <div class='row col-12 mt-4'>
+            {{#with goodsBlock}}
+            {{#each cards}}
+            <div class='col-4 g-3'>
+                <div class='card'>
 
-                <div class='card-body'>
-                    <h5 class='card-title'>
-                        {{title}}
-                        {{#if isHot}}<button class="btn btn-warning rounded-pill">HOT!</button>{{/if}}
-                        {{#if isNew}}<button class="btn btn-primary rounded-pill">Нове</button>{{/if}}
-                    </h5>
-                    <p>{{description}}</p>
+                    <img class='card-img-top' src='{{image}}' />
 
+                    <div class='card-body'>
+                        <h5 class='card-title'>
+                            {{title}}
+                            {{#if isHot}}<button class="btn btn-warning rounded-pill">HOT!</button>{{/if}}
+                            {{#if isNew}}<button class="btn btn-primary rounded-pill">Нове</button>{{/if}}
+                        </h5>
+                        <p>{{description}}</p>
+
+                    </div>
                 </div>
             </div>
+            {{/each}}
+            {{/with}}
         </div>
-        {{/each}}
-        {{/with}}
-    </div>
     </section>
 
     <hr>
