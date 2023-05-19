@@ -1,135 +1,161 @@
 <div>
-  <div><h1>{{name}}</h1></div>
-  <div><strong>{{description}}</strong></div>
-  <div><strong>Price: </strong>{{price}}</div>
-  <div><strong>({{category}})</strong></div>
+    <div>
+        <h1>{{name}}</h1>
+    </div>
+    <div><strong>{{description}}</strong></div>
+    <div><strong>Price: </strong>{{price}}</div>
+    <div><strong>({{category}})</strong></div>
 
-  <hr />  
+    <hr />
 
-  <em>{{> title data="Features:"}}</em>
+    <div class="mb-4">
+        <em>{{> title data="Features:"}}</em>
 
-  {{#with features}}
+        {{#with features}}
         {{#with processor}}
-            <div><em><h5>Processor:</h5></em></div>
-                <ul>
-                    <div><b>Brand:</b>{{brand}}</div>
-                    <div><b>Model:</b>{{model}}</div>
-                    <div><b>Speed:</b>{{speed}}</div>
-                    <div><b>Cores:</b>{{cores}}</div>
-                    <div><b>Cache:</b>{{cache}}</div>
-                    
-                </ul>
+        <div><em>
+                <h5>Processor:</h5>
+            </em></div>
+        <ul>
+            <div><b>Brand:</b>{{brand}}</div>
+            <div><b>Model:</b>{{model}}</div>
+            <div><b>Speed:</b>{{speed}}</div>
+            <div><b>Cores:</b>{{cores}}</div>
+            <div><b>Cache:</b>{{cache}}</div>
+
+        </ul>
         {{/with}}
+    </div>
 
-        <br />
-
+    <div class="mb-4">
         {{#with memory}}
-            <div><em><h5>Memory:</h5></em></div>
-                <ul>
-                    <div><b>Type:</b>{{type}}</div>
-                    <div><b>Size:</b>{{size}}</div>
-                    <div><b>Speed:</b>{{speed}}</div>
-                </ul>
-        {{/with}}  
+        <div><em>
+                <h5>Memory:</h5>
+            </em></div>
+        <ul>
+            <div><b>Type:</b>{{type}}</div>
+            <div><b>Size:</b>{{size}}</div>
+            <div><b>Speed:</b>{{speed}}</div>
+        </ul>
+        {{/with}}
+    </div>
 
-        <br />
-
+    <div class="mb-5">
         {{#with storage}}
-            <div><em><h5>Storage:</h5></em></div>
-                <ul>
-                    <div><b>Type:</b>{{type}}</div>
-                    <div><b>Size:</b>{{size}}</div>                    
-                </ul>
+        <div><em>
+                <h5>Storage:</h5>
+            </em></div>
+        <ul>
+            <div><b>Type:</b>{{type}}</div>
+            <div><b>Size:</b>{{size}}</div>
+        </ul>
         {{/with}}
+    </div>
 
-        <br />
-
+    <div class="mb-5">
         {{#with display}}
-            <div><em><h5>Display:</h5></em></div>
-                <ul>                    
-                    <div><b>Size:</b>{{size}}</div>
-                    <div><b>Resolution:</b>{{resolution}}</div>
-                    <div><b>Technology:</b>{{technology}}</div>
-                    <div><b>Color space:</b>{{color_space}}</div>
-                    <div><b>Brightness:</b>{{brightness}}</div>
-                    <div><b>Refresh rate:</b>{{refresh_rate}}</div>                    
-                </ul>
+        <div><em>
+                <h5>Display:</h5>
+            </em></div>
+        <ul>
+            <div><b>Size:</b>{{size}}</div>
+            <div><b>Resolution:</b>{{resolution}}</div>
+            <div><b>Technology:</b>{{technology}}</div>
+            <div><b>Color space:</b>{{color_space}}</div>
+            <div><b>Brightness:</b>{{brightness}}</div>
+            <div><b>Refresh rate:</b>{{refresh_rate}}</div>
+        </ul>
         {{/with}}
+    </div>
 
-        <br />
-
+    <div class="mb-5">
         {{#with graphics}}
-            <div><em><h5>Graphics:</h5></em></div>
-                <ul>                    
-                    <div><b>Brand:</b>{{brand}}</div>
-                    <div><b>Model:</b>{{model}}</div>
-                    <div><b>Memory:</b>{{memory}}</div>                                     
-                </ul>
+        <div><em>
+                <h5>Graphics:</h5>
+            </em></div>
+        <ul>
+            <div><b>Brand:</b>{{brand}}</div>
+            <div><b>Model:</b>{{model}}</div>
+            <div><b>Memory:</b>{{memory}}</div>
+        </ul>
         {{/with}}
+    </div>
 
-        <br />
-
-        <div><em><h5>Ports:</h5></em></div>
+    <div class="mb-4">
+        <div><em>
+                <h5>Ports:</h5>
+            </em></div>
 
         <ol>
-            {{#each ports}}           
-                <li>                
-                    <div><b>Type:</b>{{type}}</div>
-                    <div><b>Count:</b>{{count}}</div>
-                    {{#if features}}<div><b>Features:</b></div>{{/if}}
+            {{#each ports}}
+            <li>
+                <div><b>Type:</b>{{type}}</div>
+                <div><b>Count:</b>{{count}}</div>
+                {{#if features}}<div><b>Features:</b></div>{{/if}}
 
-                    <ul>
+                <ul>
                     {{#each features}}
-                        <li>
-                            <div>{{this}}</div>
-                        </li>
+                    <li>
+                        <div>{{this}}</div>
+                    </li>
                     {{/each}}
-                    </ul>
-                </li>                    
+                </ul>
+            </li>
             {{/each}}
         </ol>
+    </div>
 
-        <br />
-
+    <div class="mb-5">
         {{#with battery}}
-            <div><em><h5>Battery:</h5></em></div>
-                <ul>                    
-                    <div><b>Type:</b>{{type}}</div>
-                    <div><b>Capacity:</b>{{capacity}}</div>
-                    <div><b>Life:</b>{{life}}</div>                                     
-                </ul>
-        {{/with}} 
+        <div><em>
+                <h5>Battery:</h5>
+            </em></div>
+        <ul>
+            <div><b>Type:</b>{{type}}</div>
+            <div><b>Capacity:</b>{{capacity}}</div>
+            <div><b>Life:</b>{{life}}</div>
+        </ul>
+        {{/with}}
+    </div>
 
-        <br />
+    <div class="mb-4">
+        <em>
+            <h5>Weight: {{weight}}</h5>
+        </em>
+    </div>
 
-        <div><em><h5>Weight: {{weight}}</h5></em></div>
-
-        <br />
-
+    <div class="mb-4">
         {{#with dimensions}}
-            <div><em><h5>Dimensions:</h5></em></div>
-                <ul>                    
-                    <div><b>Height:</b>{{height}}</div>
-                    <div><b>Width:</b>{{width}}</div>
-                    <div><b>Depth:</b>{{depth}}</div>                                     
-                </ul>
-        {{/with}} 
+        <div><em>
+                <h5>Dimensions:</h5>
+            </em></div>
+        <ul>
+            <div><b>Height:</b>{{height}}</div>
+            <div><b>Width:</b>{{width}}</div>
+            <div><b>Depth:</b>{{depth}}</div>
+        </ul>
+        {{/with}}
+    </div>
 
-        <br />
+    <div class="mb-5">
+        <em>
+            <h5>Operating system: {{operating_system}}</h5>
+        </em>
+    </div>
 
-        <div><em><h5>Operating system: {{operating_system}}</h5></em></div>
+    <div>
+        <em>
+            <h5>Accessories:</h5>
+        </em>
+    </div>
 
-        <br />
-
-        <div><em><h5>Accessories:</h5></em></div>
-
-        <ol>
-            {{#each accessories}}           
-                <li>                
-                    <div><b>Name:</b>{{name}}</div>
-                    <div><b>Price:</b>{{price}}</div>                    
-                </li>                    
-            {{/each}}
-        </ol>
-  {{/with}}
+    <ol>
+        {{#each accessories}}
+        <li>
+            <div><b>Name:</b>{{name}}</div>
+            <div><b>Price:</b>{{price}}</div>
+        </li>
+        {{/each}}
+    </ol>
+    {{/with}}
 </div>
