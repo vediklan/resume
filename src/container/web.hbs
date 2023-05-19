@@ -1,71 +1,64 @@
 <div>
   {{#with web}}
-    <em>{{> title data="Programming languages:"}}</em>
-    {{#each languages}}
-      <div><b>Name:</b>{{name}}</div>
-      <div><b>Version:</b>{{version}}</div>
-      <div><b>Description:</b>{{description}}</div>
+  <em>{{> title data="Programming languages:"}}</em>
+  {{#each languages}}
+  <div><b>Name:</b>{{name}}</div>
+  <div><b>Version:</b>{{version}}</div>
+  <div class="mb-5"><b>Description:</b>{{description}}</div>
 
-      <br />
+  <ul class="mb-5">
+    {{#each elements}}
+    <div><b>Name:</b>{{name}}</div>
+    <div><b>Description:</b>{{description}}</div>
 
-      <ul>
-        {{#each elements}}
-          <div><b>Name:</b>{{name}}</div>
-          <div><b>Description:</b>{{description}}</div>
+    <ul class="mb-5">
+      {{#each attributes}}
+      <li>
+        <div><b>Name:</b>{{name}}</div>
+        <div><b>Description:</b>{{description}}</div>
+      </li>
+      {{/each}}
+    </ul>
 
-          <ul>
-            {{#each attributes}}
-              <li>
-                <div><b>Name:</b>{{name}}</div>
-                <div><b>Description:</b>{{description}}</div>
-              </li>
-            {{/each}}
-          </ul>
-          
-          <br />
-        {{/each}}
-      </ul>
-
-      <ul>
-        {{#each properties}}
-          <div><b>Name:</b>{{name}}</div>
-          <div><b>Description:</b>{{description}}</div>
-
-          <ul>
-            {{#each values}}
-              <li>
-                <div><b>Color:</b>{{value}}</div>
-                <div><b>Description:</b>{{description}}</div>
-              </li>
-            {{/each}}
-          </ul>          
-          
-          <br />
-        {{/each}}        
-      </ul>
-
-      <ul>
-        {{#each functions}}
-          <div><b>Name:</b>{{name}}</div>
-          <div><b>Description:</b>{{description}}</div>
-
-          <ul>
-            {{#each parameters}}
-              <li>
-                <div><b>Name:</b>{{name}}</div>
-                <div><b>Type:</b>{{type}}</div>
-                <div><b>Description:</b>{{description}}</div>
-              </li>
-            {{/each}}
-          </ul>          
-          
-          <br />
-        {{/each}}
-      </ul>
-
-      <br />
-      <br />
 
     {{/each}}
+  </ul>
+
+  <ul>
+    {{#each properties}}
+    <div><b>Name:</b>{{name}}</div>
+    <div><b>Description:</b>{{description}}</div>
+
+    <ul class="mb-5">
+      {{#each values}}
+      <li>
+        <div><b>Color:</b>{{value}}</div>
+        <div><b>Description:</b>{{description}}</div>
+      </li>
+      {{/each}}
+    </ul>
+
+    {{/each}}
+  </ul>
+
+  <ul>
+    {{#each functions}}
+    <div><b>Name:</b>{{name}}</div>
+    <div><b>Description:</b>{{description}}</div>
+
+    <ul class="mb-5">
+      {{#each parameters}}
+      <li>
+        <div><b>Name:</b>{{name}}</div>
+        <div><b>Type:</b>{{type}}</div>
+        <div><b>Description:</b>{{description}}</div>
+      </li>
+      {{/each}}
+    </ul>
+
+    {{/each}}
+  </ul>
+
+  {{/each}}
   {{/with}}
 </div>

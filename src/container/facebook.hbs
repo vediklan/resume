@@ -1,114 +1,127 @@
 <div>
-  <div><h1>{{name}}</h1></div>
+    <div>
+        <h1>{{name}}</h1>
+    </div>
 
-  <hr />
+    <hr />
 
-  <em>{{> title data="Users:"}}</em>
+    <div class="mb-4">
+        <em>{{> title data="Users:"}}</em>
+    </div>
 
-  <br />  
 
     {{#each users}}
+    <div class="mb-2">
         <div><b>ID:</b>{{id}}</div>
         <div><b>Name:</b>{{name}}</div>
         <div><b>Gender:</b>{{gender}}</div>
         <div><b>Age:</b>{{age}}</div>
-        
-        <br />
+    </div>
+    <br />
 
-            <div><em><h5>Friends:</h5></em></div>
+    <div><em>
+            <h5>Friends:</h5>
+        </em></div>
+    <ul class="mb-5">
+        {{#each friends}}
+        <li>
+            <div><b>ID:</b>{{id}}</div>
+            <div><b>Name:</b>{{name}}</div>
+            <div><b>Gender:</b>{{gender}}</div>
+            <div><b>Age:</b>{{age}}</div>
+        </li>
+
+        <div class="mt-4"><em>
+                <h5>Mutual friends:</h5>
+            </em></div>
         <ul>
-            {{#each friends}}
+            {{#each mutual_friends}}
+            <li>
+                <div><b>ID:</b>{{id}}</div>
+                <div><b>Name:</b>{{name}}</div>
+                <div><b>Gender:</b>{{gender}}</div>
+                <div><b>Age:</b>{{age}}</div>
+            </li>
+            <ul>
+                {{#each mutual_friends}}
+                <div><em>
+                        <h5>Mutual friends:</h5>
+                    </em></div>
                 <li>
                     <div><b>ID:</b>{{id}}</div>
                     <div><b>Name:</b>{{name}}</div>
                     <div><b>Gender:</b>{{gender}}</div>
                     <div><b>Age:</b>{{age}}</div>
                 </li>
+                {{/each}}
+            </ul>
+            {{/each}}
+        </ul>
 
-                    <div><em><h5>Mutual friends:</h5></em></div>
-                    <ul>                        
-                        {{#each mutual_friends}}                        
-                            <li>
-                                <div><b>ID:</b>{{id}}</div>
-                                <div><b>Name:</b>{{name}}</div>
-                                <div><b>Gender:</b>{{gender}}</div>
-                                <div><b>Age:</b>{{age}}</div>                            
-                            </li>
-                                <ul>
-                                    {{#each mutual_friends}}
-                                        <div><em><h5>Mutual friends:</h5></em></div>
-                                        <li>
-                                            <div><b>ID:</b>{{id}}</div>
-                                            <div><b>Name:</b>{{name}}</div>
-                                            <div><b>Gender:</b>{{gender}}</div>
-                                            <div><b>Age:</b>{{age}}</div>                            
-                                        </li>
-                                    {{/each}}
-                                </ul>
-                        {{/each}}
-                    </ul>
-{{!-- // ================================================================= --}}
-         <br />        
+        {{!-- // ================================================================= --}}
 
-        <ul>
+        <ul class="mb-4">
+            {{#if groups}}<div><em>
+                    <h5>Groups:</h5>
+                </em></div>{{/if}}
+            {{#each groups}}
+            <li>
+                <div><b>ID:</b>{{id}}</div>
+                <div><b>Name:</b>{{name}}</div>
+                <div><b>Description:</b>{{description}}</div>
+            </li>
 
-            {{#if groups}}<div><em><h5>Groups:</h5></em></div>{{/if}}
-            {{#each groups}}            
+            <div class="mt-4"><em>
+                    <h5>Members:</h5>
+                </em></div>
+            <ul>
+                {{#each members}}
                 <li>
                     <div><b>ID:</b>{{id}}</div>
                     <div><b>Name:</b>{{name}}</div>
-                    <div><b>Description:</b>{{description}}</div>                    
+                    <div><b>Gender:</b>{{gender}}</div>
+                    <div><b>Age:</b>{{age}}</div>
                 </li>
-
-                <br />
-
-                     <div><em><h5>Members:</h5></em></div>
-                    <ul>                        
-                        {{#each members}}                       
-                            <li>
-                                <div><b>ID:</b>{{id}}</div>
-                                <div><b>Name:</b>{{name}}</div>
-                                <div><b>Gender:</b>{{gender}}</div>
-                                <div><b>Age:</b>{{age}}</div>                            
-                            </li>
-                        {{/each}}
-                    </ul>
+                {{/each}}
+            </ul>
             {{/each}}
         </ul>
 
-{{!-- // ================================================================== --}}
+        {{!-- // ================================================================== --}}
 
-            {{/each}}
-        </ul>
+        {{/each}}
+    </ul>
+
+    {{#if groups}}
+    <div><em>
+            <h5>Groups:</h5>
+        </em></div>
+    {{/if}}
+
+    <ul>
+        {{#each groups}}
+        <li>
+            <div><b>ID:</b>{{id}}</div>
+            <div><b>Name:</b>{{name}}</div>
+            <div><b>Description:</b>{{description}}</div>
+        </li>
 
         <br />
 
-            {{#if groups}}
-                <div><em><h5>Groups:</h5></em></div>
-            {{/if}}
-
+        <div><em>
+                <h5>Members:</h5>
+            </em></div>
         <ul>
-            {{#each groups}}
-                <li>
-                    <div><b>ID:</b>{{id}}</div>
-                    <div><b>Name:</b>{{name}}</div>
-                    <div><b>Description:</b>{{description}}</div>                    
-                </li>
-
-                <br />
-
-                     <div><em><h5>Members:</h5></em></div>
-                    <ul>                        
-                        {{#each members}}                       
-                            <li>
-                                <div><b>ID:</b>{{id}}</div>
-                                <div><b>Name:</b>{{name}}</div>
-                                <div><b>Gender:</b>{{gender}}</div>
-                                <div><b>Age:</b>{{age}}</div>                            
-                            </li>
-                        {{/each}}
-                    </ul>
+            {{#each members}}
+            <li>
+                <div><b>ID:</b>{{id}}</div>
+                <div><b>Name:</b>{{name}}</div>
+                <div><b>Gender:</b>{{gender}}</div>
+                <div><b>Age:</b>{{age}}</div>
+            </li>
             {{/each}}
-        </ul> 
-    {{/each}}  
+        </ul>
+        {{/each}}
+    </ul>
+    {{/each}}
 </div>

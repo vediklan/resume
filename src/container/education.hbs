@@ -4,32 +4,32 @@
 }}
 
 <div>
-  <main>
-    {{#with main}}
-        <section>
-            {{> title data="My educationss" big=true}} 
+    <main>
+        {{#with main}}
+        <section class="my-5">
+            {{> title data="My educationss" big=true}}
             <ul>
                 {{#each educations}}
-                    <li>
-                        {{name}}
-                        {{#if isEnd}} (ще в процесі) {{/if}}
-                    </li>
+                <li>
+                    {{name}}
+                    {{#if isEnd}} (ще в процесі) {{/if}}
+                </li>
                 {{/each}}
             </ul>
         </section>
-  
-        <section>
-            {{> title data="My certificates"}} 
+
+        <section class="mb-5">
+            {{> title data="My certificates"}}
             <ul>
                 {{#each certificates}}
-                    <li>
-                        {{name}} (id: {{id}})
-                    </li>
+                <li>
+                    {{name}} (id: {{id}})
+                </li>
                 {{/each}}
             </ul>
         </section>
-  </main>
-  {{/with}}
+    </main>
+    {{/with}}
 </div>
 
 {{!--
